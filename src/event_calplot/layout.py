@@ -1,3 +1,5 @@
+"""Layout utilities for the calendar plot."""
+
 from typing import Literal
 
 import numpy as np
