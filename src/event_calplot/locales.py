@@ -79,4 +79,8 @@ def get_locale_text(language: str = "en") -> DateLabels:
             f"Unsupported language code '{language}'. "
             f"Supported languages are: {', '.join(LOCALES.keys())}."
         )
-    return locale
+    # Return a shallow copy to prevent accidental mutation of the global LOCALES
+    return {
+        "months": list(locale["months"]),
+        "weekdays": list(locale["weekdays"]),
+    }
