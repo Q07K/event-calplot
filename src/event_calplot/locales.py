@@ -1,3 +1,5 @@
+"""Locale support for date labels in different languages."""
+
 from typing import TypedDict
 
 
