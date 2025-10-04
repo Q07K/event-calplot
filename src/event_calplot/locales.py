@@ -13,6 +13,12 @@ class DateLabels(TypedDict):
 def get_locale_text(language: str = "en") -> DateLabels:
     """Get date labels for a specific language.
 
+    Supported languages:
+    - "en": English
+    - "ko": Korean
+
+    The weekdays start from Monday.
+
     Parameters
     ----------
     language : str, optional
@@ -24,9 +30,9 @@ def get_locale_text(language: str = "en") -> DateLabels:
         The date labels for the specified language
     """
 
-    locales = {
-        "en": DateLabels(
-            months=[
+    locales: dict[str, DateLabels] = {
+        "en": {
+            "months": [
                 "Jan",
                 "Feb",
                 "Mar",
@@ -40,10 +46,10 @@ def get_locale_text(language: str = "en") -> DateLabels:
                 "Nov",
                 "Dec",
             ],
-            weekdays=["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        ),
-        "ko": DateLabels(
-            months=[
+            "weekdays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        },
+        "ko": {
+            "months": [
                 "1월",
                 "2월",
                 "3월",
@@ -57,8 +63,8 @@ def get_locale_text(language: str = "en") -> DateLabels:
                 "11월",
                 "12월",
             ],
-            weekdays=["월", "화", "수", "목", "금", "토", "일"],
-        ),
+            "weekdays": ["월", "화", "수", "목", "금", "토", "일"],
+        },
         # Add more languages as needed
     }
-    return locales.get(language, locales["en"])
+    return locales[language]
