@@ -67,4 +67,9 @@ def get_locale_text(language: str = "en") -> DateLabels:
         },
         # Add more languages as needed
     }
-    return locales[language]
+    locale = locales.get(language)
+    if locale is None:
+        raise ValueError(
+            f"Unsupported language code '{language}'. Supported languages are: {', '.join(locales.keys())}."
+        )
+    return locale
