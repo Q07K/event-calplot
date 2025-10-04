@@ -12,7 +12,7 @@ jobs:
         runs-on: ubuntu-latest
         environment: "Publishing PyPi with uv"
         permissions:
-            id-token: write
+            # id-token: write
             contents: read
         steps:
             # Checkout the repository
