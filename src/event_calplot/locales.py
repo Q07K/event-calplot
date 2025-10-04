@@ -54,9 +54,7 @@ def get_locale_text(language: str = "en") -> DateLabels:
 
     The weekdays start from Monday.
 
-    Supported languages:
-    - "en": English
-    - "ko": Korean
+    Supported languages are the keys of the LOCALES dictionary.
 
 
     Parameters
