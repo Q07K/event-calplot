@@ -5,7 +5,10 @@ from typing import Literal
 import numpy as np
 import plotly.graph_objects as go
 
-from src.event_calplot.locales import get_locale_text
+from .locales import get_locale_text
+
+# Subtract 15 to position the label at the middle of the month
+MID_MONTH_DAY = 15
 
 
 def calculate_month_positions(days_in_months: list[int]) -> list[float]:
@@ -22,7 +25,6 @@ def calculate_month_positions(days_in_months: list[int]) -> list[float]:
         List of positions (in weeks) for month labels
     """
 
-    MID_MONTH_DAY = 15  # Subtract 15 to position the label at the middle of the month
     cumsum = np.cumsum(days_in_months)
     return ((cumsum - MID_MONTH_DAY) / 7).tolist()
 
