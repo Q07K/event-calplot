@@ -1,0 +1,68 @@
+{
+    // Editor 설정
+    "editor.minimap.enabled": false,
+    "editor.rulers": [
+        79
+    ],
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    // Python 전용 설정
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.unusedImports": "explicit"
+        },
+        "editor.formatOnSave": true
+    },
+    // Black 포매터 설정
+    "black-formatter.args": [
+        "--line-length=79"
+    ],
+    // Pylint 설정
+    "pylint.args": [
+        "--max-line-length=79"
+    ],
+    // Docstring 형식
+    "autoDocstring.docstringFormat": "numpy",
+    // isort 설정
+    "isort.args": [
+        "--case-sensitive",
+        "--dont-order-by-type",
+        "--profile",
+        "black"
+    ],
+    // Pylance 및 Python 분석기 설정
+    "python.languageServer": "Pylance",
+    "python.analysis.indexing": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.autoIndent": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.inlayHints.callArgumentNames": "all",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.importFormat": "absolute",
+    // Python 테스트 설정 (unittest)
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./tests",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.unittestEnabled": true,
+    "python.testing.pytestEnabled": false,
+    // 불필요한 파일 제외
+    "files.exclude": {
+        "**/*.pyc": true,
+        "**/__pycache__": true
+    },
+    // JSON 파일 포맷터 설정
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // 디버그 툴바 위치
+    "debug.toolBarLocation": "commandCenter",
+}
