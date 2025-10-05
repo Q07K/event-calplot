@@ -1,5 +1,5 @@
 name: Publish to PyPI
-'on':
+"on":
   push:
     tags:
       - v*.*.*
@@ -22,7 +22,7 @@ jobs:
         with:
           enable-cache: true
       - name: Install the project
-        run: uv sync --locked --all-extras --dev
+        run: uv sync
       - name: Build package
         run: uv build
       - name: Publish to PyPI
