@@ -29,6 +29,9 @@ uv add event-calplot
 ## Quick Start
 
 ```python
+import pandas as pd
+from event_calplot import create_calendar_heatmap
+
 df = pd.DataFrame({
     'date': pd.date_range('2024-01-01', '2024-12-31'),
     'value': range(366)
@@ -94,7 +97,7 @@ fig.show()
 
 ## API Reference
 
-### `event-calplot`
+### `create_calendar_heatmap`
 Create a calendar heatmap for a single year.
 
 **Parameters:**
